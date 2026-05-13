@@ -5,7 +5,7 @@ export function connectSocket() {
   const token = localStorage.getItem("token");
   if (!token) return null;
   if (socket?.connected) return socket;
-  socket = io(import.meta.env.VITE_SOCKET_URL || "http://localhost:5000", {
+  socket = io(import.meta.env.VITE_SOCKET_URL || "https://alumni-portal-1-135t.onrender.com", {
     auth: { token },
     transports: ["websocket"],
   });
